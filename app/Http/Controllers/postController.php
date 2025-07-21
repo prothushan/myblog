@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class postController extends Controller
 {
     public function store(Request $request)
     {
         Post::create([
-            'user_id' => auth()->user()->id,
+            'user_id' => Auth::user()->id,
             'title' => $request->input('title'),
             'description' => $request->input('description')
         ]);

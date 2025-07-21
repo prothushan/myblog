@@ -161,7 +161,7 @@
                      @auth
                         <a href="{{route('home')}}" class="link-primary ms-3">Add a new Post</a>
                         <a href="{{route('posts.all')}}" class="link-info ms-3">All Posts</a>
-                        <a href="{{route('posts.delete', $post->id)}}" class="link-info ms-3">Delete</a>
+                        
                     @endauth
 
                 </div>
@@ -184,6 +184,7 @@
 
                     {{-- Show when user IS logged in --}}
                     @auth
+                        <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-info ms-2">Admin Panel</a>
                         <form action="{{ route('logout') }}" method="POST" class="d-inline">
                             @csrf
                             <button type="submit" class="btn btn-sm btn-outline-danger ms-2">Logout</button>
